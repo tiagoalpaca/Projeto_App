@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/style-padrao.css"/>
-    <title>Login</title>
+    <title>Produto</title>
     
 </head>
 <body>
@@ -25,20 +25,37 @@
         </nav>
     </header>
 
-    <section>
-        <h1>Nome empresa</h1>
-        <img src="https://png.pngtree.com/png-vector/20190120/ourlarge/pngtree-gallery-vector-icon-png-image_470660.jpg" alt = "Imagem Exemplo">
+    <section class="favorite">
+        <a href="Tela_Home.html">
+            <i class="bi bi-chevron-double-left"></i></a>
+        <i class="bi bi-heart-fill"></i>
+    </section>
 
-        <div>
-            <label for="">Login</label>
-            <input type="text">
-
-            <label for="">Senha</label>
-            <input type="password">
-
-         <button>Realizar Login</button>
+    <section class="secao-produto">
+        <h1 id="nome-empresa">Nome do Produto</h1>
+        <p id="descricao-produto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates odio officia sit natus dolorem quae, accusantium sequi quis reprehenderit nemo fugiat? Sequi officia vel corporis nihil voluptatem saepe explicabo nam.</p>
+        
+        <div class ="imagem-quantidade">
+            <img src="https://png.pngtree.com/png-vector/20190120/ourlarge/pngtree-gallery-vector-icon-png-image_470660.jpg" alt = "Imagem do produto">
+            <div class="quantidade-produto">
+                <i class="bi bi-dash-square"></i>
+                <p class="numero-produto">1</p>
+                <i class="bi bi-plus-square"></i>    
+            </div>
         </div>
 
+        <div class="precos-produto">
+            <p class="precos">Preco Unitario</p>
+            <p class="preco-valores">R$ 000,00</p>
+
+            <p class="precos">Preco Total</p>
+            <p class="preco-valores">R$ 000,00</p>
+        </div>
+
+        <div>
+            <i class="bi bi-cart-plus"></i>
+            <button class="botao-add-carrinho">Adicionar ao carrinho</button>
+        </div>
     </section>
 
     <footer id="footer" class="footer">
@@ -76,13 +93,7 @@
             </a>
         </ul>
     </footer>
-    
-    <script src="./js/script-login.js"></script>
-    <!-- quando ele clicar no home ele vai para a pagina home.html, o mesmo pros outros casos. -->
-        <!-- o href pode referenciar paginas da internet -->
-        <!-- <a href="https://www.google.com.br/">Google</a> -->
-        <!-- <br> -->
-        <!-- target blank serve para abrir o site em uma nova guia, nao na atual -->
-         <!-- <a href="https://www.google.com.br/" target = "_blank">PADventures</a> -->
-         <!-- <br> -->
+
+    <script src="./js/script-produto.js"></script>
 </body>
+</html>

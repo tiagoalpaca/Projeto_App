@@ -1,0 +1,569 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Source+Code+Pro:wght@300&display=swap');
+
+/* asterisco usado para usar em tudo do projeto */
+*{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    min-height: 100vh;
+    /* unidade vh é a altura do viewport,permitindo que o body defina um valor minimo de altura com base na altura total do viewport do usuario */
+}
+
+/* raiz o padrão,caso não gostar da cor do projeto pode trocar facilmente */
+:root{
+    --background-clean: beige;
+    --cor-da-empresa: rgb(72, 255, 0);
+}
+
+/* Estilização do Header -NAV */
+.cabecalho{
+    width:100%;
+    background-image: url(data:image/jpeg;base64,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);
+}
+
+.menu{
+    display: flex;
+}
+
+.menu.ul-menu{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.ul-menu li{
+    list-style: none;
+    padding: 2rem;
+    color: blue;
+}
+
+.bi-file-person{
+    font-size: 60px;
+    color: var(--cor-da-empresa);
+}
+ul li#imagem-localizacao{
+    display: flex;
+    padding-right: 0;
+    margin-right: .8rem;
+    align-items: center;
+}
+.botao-localizar{
+    font-size: 15px;
+}
+.bi-geo-alt-fill{
+    font-size: 80px;
+    color: var(--cor-da-empresa);
+
+}
+
+.nome-localizacao{
+    font-size: 40px;
+    padding-left: 0;
+    padding-right: 5rem;
+}
+
+.bi-card-image{
+    font-size: 60px;
+    color: var(--cor-da-empresa);
+}
+
+
+/* Estilização da seção das Mensagens */
+section#mensagens-inicio{
+    padding: 2rem;
+    background-color: var(--background-clean);
+}
+
+/* id vc chama com # */
+#nome-empresa{
+    font-style: bold;
+    font-size: 50px;
+    margin-bottom: .5rem;
+    color: var(--cor-da-empresa);
+}
+
+.mensagem{
+    color: gray;
+    font-size: 20px;
+}
+
+/* Estilização da seção Input */
+section#input{
+    display: flex;
+    padding-top: .5rem;
+    width: 90%;
+    margin: auto;
+    align-items: center;
+}
+
+i.bi-search-heart{
+    position: absolute;
+    color:var(--cor-da-empresa);
+    padding-top: .2rem;
+    padding-left: .6rem;
+    font-size: 40px;
+}
+
+#input-text{
+    width: 90%;
+    margin: auto;
+    font-size: 25px;
+    padding:1.2rem 0 1.2rem;
+    padding-left: 13rem;
+    border: 2mm ridge rgb(255, 102, 0);
+    text-align: center;
+}
+
+input:focus{
+    outline: 0;
+}
+
+/* Estilização da Categoria */
+section#categorias{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+#categoria-ul{
+    display: flex;
+    justify-content: center;
+}
+
+.categoria-a{
+    margin: 3rem 5rem;
+    text-decoration: none;
+    justify-content: center;
+}
+
+li.categoria{
+    margin: auto;
+}
+
+li.categoria{
+    margin:auto;
+    color: gray;
+    list-style: none;
+    border:solid 1px var(--cor-da-empresa);
+    border-radius: 2rem;
+    width: 90%;
+    padding: 2rem;
+    margin:1.2rem;
+    font-weight: 300;
+    text-align: center;
+    transition: transform 0.6s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+    .categoria:hover{
+        background-color: var(--cor-da-empresa);
+        border: 5px solid grey;
+        transform:scale(1.5);
+        box-shadow: 0 5px 15px black;
+    }
+
+/* Estilização Produto */
+section#cards-produtos{
+    display: flex;
+}
+
+.card-produto{
+    display: block;
+    margin: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 5px 15px;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    align-content: center;
+
+}
+
+.card-produto:hover{
+    box-shadow: inset 50px 0 0 0;
+    color: white;
+}
+
+.card-produto img{
+    display: block;
+    width: 70%;
+    margin: auto;
+    justify-content: center;
+}
+
+h3.nome-do-produto{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    font-size: 20px;
+    color: var(--cor-da-empresa);
+    margin-bottom: 1.3rem;
+    margin-top: .2rem;
+}
+
+/* Estilização do VERMais */
+
+div#ver-mais{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 30px;
+    margin-right:2rem;
+    margin-bottom: 2rem;
+}
+
+div#ver-mais a{
+    color: gray;
+    text-decoration: none;
+    margin: .8rem 2rem;
+}
+
+/* Estilização da Avaliação */
+section#avaliacao{
+    text-align: center;
+    border: .5rem outset var(--cor-da-empresa);
+    outline: .5rem solid orange;
+    box-shadow:0 0 0 1rem gray ;
+    border-radius: 12px;
+    margin: 2rem;
+    padding: 1rem;
+    width: 50%;
+    margin: auto;
+    font: bold 1rem sans-serif;
+}
+
+#titulo-avaliacao{
+    font-size: 40px;
+    color: var(--cor-da-empresa);
+    text-shadow: 2px 2px black;
+}
+
+.bi-hand-thumbs-up{
+    font-size: 40px;
+    color: var(--cor-da-empresa);
+    text-shadow: 2px 2px black;
+}
+
+.bi-hand-thumbs-down{
+    font-size: 40px;
+    color: var(--cor-da-empresa);
+    text-shadow: 2px 2px black;
+}
+
+#frase-avaliacao{
+    font-size: 30px;
+    color: gray;
+    padding: 1.2rem;
+}
+
+/* Estilização do Footer */
+.footer{
+    background-color: var(--background-clean);
+    margin-top: 5rem;
+}
+
+.footer-card{
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+.footer-card li{
+    list-style: none;
+}
+
+.footer-card a{
+    text-decoration: none;
+    text-align: center;
+    color: black;
+}
+
+.footer-item{
+    margin: .5rem;
+}
+
+i.bi-house-door-fill{
+    font-size: 60px;
+    color:var(--cor-da-empresa);
+}
+
+i.bi-emoji-smile{
+    font-size: 60px;
+    color:var(--cor-da-empresa);
+}
+
+i.bi-upc-scan{
+    font-size: 60px;
+    color:var(--cor-da-empresa);
+}
+
+i.bi-cart{
+    font-size: 60px;
+    color:var(--cor-da-empresa);
+}
+
+i.bi-stickies{
+    font-size: 60px;
+    color:var(--cor-da-empresa);
+}
+
+.footer-nome-item{
+    font-size: 20px;
+    font-weight: 700;
+    color: gray;
+    text-align: center;
+}
+
+/* Tela Carrinho */
+
+.carrinho{
+    display: flex; 
+    justify-content: space-between;
+    margin: 2rem;
+}
+
+.carrinho a{
+    text-decoration: none;
+    color: black;
+}
+
+i.bi-chevron-double-left{
+    font-size: 70px;
+    color:var(--cor-da-empresa);
+}
+
+.nome-carrinho{
+    font-size: 30px;
+    font-weight: 800;
+    padding: 0.4rem;
+}
+
+i.bi-cart-x{
+    font-size: 60px;
+    color:var(--cor-da-empresa);
+    color: red;
+}
+
+.bi-trash-fill{
+    font-size: 50px;
+    color:red;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+section#carrinho{
+    padding: 2rem;
+    background-color: var(--background-clean);
+    display: inline;  
+    margin: auto;  
+}
+
+section#produtos-carrinho{
+    padding: 2rem;
+    background-color: var(--background-clean);
+   
+}
+.img-carrinho{
+    width: 50%;
+    border-radius: 2rem;
+    margin-left: 35rem;
+   
+}
+
+#imagem-produto-carrinho{
+    width: 50%;
+    justify-content: center;
+    border-radius: 2rem;
+    align-items: center;
+    text-align: center;
+}
+
+#imagem-produto-carrinho:hover{
+    border: 2px solid black;
+    transform: scale(.9);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#nome-do-produto{
+    margin: 1.5rem;
+    font-size: 25px;
+    text-align: center;
+}
+
+.nome-quantidade{
+    align-items: center;
+    text-align: center;
+}
+section#cupom{
+    padding: 2rem;
+    background-color: var(--background-clean);
+    
+}
+.input-cupom{
+    font-size: 20px;
+    margin-top: 3rem;
+    margin-left: 37rem;
+}
+
+.botao-aplicar{
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+section#pagamento{
+    padding: 2rem;
+    background-color: var(--background-clean);
+}
+
+.precos-carrinho{
+    font-size: 20px;
+    text-align: center;
+    color: blue;
+    font-weight: 500;
+    margin-top: 1.5rem;
+    font-style:var(--background-clean);
+}
+.precos-valores-carrinho{
+    margin-top: .5rem;
+    font-size: 20px;
+    text-align: center;
+    color: black;
+   font-style:var(--background-clean);
+}
+.botao-pagamento{
+    font-size: 20px;
+    margin-top: .5rem;
+    margin-left: 42rem;
+}
+
+/* Tela Produto */
+/* Estilização da seção dos favoritos */
+
+.favorite{
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+}
+
+.favorite a{
+    text-decoration: none;
+    color: black;
+}
+
+i.bi-chevron-double-left{
+    font-size: 110px;
+    padding-left: 1.5rem;
+}
+
+i.bi-heart-fill{
+    font-size: 70px;
+    text-shadow: 2px 2px black;
+    color: var(--cor-da-empresa);
+    padding-right: 1.5rem;
+}
+
+i.red{
+    color: red;
+}
+
+.secao-produto{
+    text-align: center;
+}
+
+#descricao-produto{
+    margin: 1.5rem;
+    text-align: center;
+    font-size: 25px;
+}
+
+#imagem-produto{
+    width: 25%;
+    justify-content: center;
+    border-radius: 2rem;
+}
+
+#imagem-produto:hover{
+    border: 2px solid black;
+    transform: scale(.9);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    cursor: pointer;
+}
+
+.quantidade-produto{
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+i.bi-dash-square{
+    padding: 0.5rem;
+    font-size: 30px;
+}
+
+.numero-produto{
+    padding: 0.5rem;
+    font-size: 30px;
+}
+
+i.bi-plus-square{
+    padding: 0.5rem;
+    font-size: 30px;
+}
+.precos-produto{
+    padding: 0.9rem;
+    align-items: center;
+}
+
+.precos{
+    margin-top: 2rem;
+    font-size: 30px;
+    font-weight: 800;
+    padding: 0.4rem;
+    color: var(--cor-da-empresa);
+    text-shadow: 1px 1px black;
+    align-items: center;
+}
+
+.precos-valores{
+    margin-top: 2rem;
+    font-size: 30px;
+    color: black;
+}
+
+i.bi-cart-plus{
+    font-size: 50px;
+}
+.botao-add-carrinho{
+    font-size: 25px;
+}
+
+/* Usando media queries para transformar nossa page acessivel a tela menores */
+@media screen and (max-width: 480px) {
+    body{
+        width: 100%;
+    }
+    header{
+        display: flex;
+    }
+
+    .nome-localizacao,i.bi-geo-alt-fill,i.bi-card-image{
+        display: none;
+    }
+
+    ul.footer-card{
+        flex-wrap: wrap;
+        margin: auto;
+        justify-content: center;
+    }
+    .footer-card a{
+        width: 100%;
+    }
+}

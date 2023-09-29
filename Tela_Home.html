@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link 
+         rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./css/style-padrao.css"/>
+    <title>Home</title>
+    
+</head>
+<body>
+    <header class ="cabecalho">
+        <nav class ="menu">
+            <ul class="ul-menu">
+                <a href=""> <li> <i class="bi bi-file-person"></i> </li></a>
+                <li id="imagem-localizacao"> 
+                    <i class="bi bi-geo-alt-fill"></i> 
+                    <!-- vai adicionar API de localização -->
+                    <input id="cep" type="text" placeholder="Digite seu CEP">
+                    <button class="botao-localizar" onclick="consultaEndereco()">Consultar</button>
+                    <p class="nome-localizacao"></p></li>
+                <li> <i class="bi bi-card-image"></i> </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="mensagens-inicio">
+            <h1 id="nome-empresa">Nome da Empresa</h1>
+            <h2 class="mensagem">Oi,Seja Bem Vindo</h2>
+            <h3 class="mensagem">Vamos fazer seu pedido</h3>
+        </section>
+
+        <section id="input">
+            <i class="bi bi-search-heart"></i>
+            <input id="input-text" type="text" placeholder="Digite seu pedido">
+        </section>
+
+        <section id="categorias">
+            <ul id="categoria-ul">
+                <a href="" class="categoria-a"><li class="categoria">Categoria 1</li></a>
+                <a href="" class="categoria-a"><li class="categoria">Categoria 2</li></a>
+                <a href="" class="categoria-a"><li class="categoria">Categoria 3</li></a>
+                <a href="" class="categoria-a"><li class="categoria">Categoria 4</li></a>
+            </ul>
+        </section>
+
+        <section id="cards-produtos">
+            <div class="card-produto">
+                <img src="https://png.pngtree.com/png-vector/20190120/ourlarge/pngtree-gallery-vector-icon-png-image_470660.jpg"alt = "Imagem Exemplo 1">
+                <h3 class="nome-do-produto">Produto 1</h3>
+            </div>
+
+            <div class="card-produto">
+                <img src="https://png.pngtree.com/png-vector/20190120/ourlarge/pngtree-gallery-vector-icon-png-image_470660.jpg"alt = "Imagem Exemplo 2">
+                <h3 class="nome-do-produto">Produto 2</h3>
+            </div>
+
+            <div class="card-produto">
+                <img src="https://png.pngtree.com/png-vector/20190120/ourlarge/pngtree-gallery-vector-icon-png-image_470660.jpg" alt = "Imagem Exemplo 3">
+                <h3 class="nome-do-produto">Produto 3</h3>
+            </div>
+
+            <div class="card-produto">
+                <img src="https://png.pngtree.com/png-vector/20190120/ourlarge/pngtree-gallery-vector-icon-png-image_470660.jpg" alt = "Imagem Exemplo 4">
+                <h3 class="nome-do-produto">Produto  4</h3>
+            </div>   
+        </section>
+
+        <div id="ver-mais">
+            <a href = "">Ver mais >></a>
+         </div>   
+
+        <section id="avaliacao">
+            <p id="titulo-avaliacao">Avalie nosso Aplicativo</p>
+            <i class="bi bi-hand-thumbs-up"></i>
+            <i class="bi bi-hand-thumbs-down"></i>
+            <span id="frase-avaliacao">Sua avaliacao pode gerar cupons</span>
+        </section>
+
+        <footer id="footer" class="footer">
+            <ul class="footer-card">
+                <a href="Tela_Home.html">
+                    <li class="footer-item">
+                        <i class="bi bi-house-door-fill"></i>
+                        <p class="footer-nome-item">Home</p>
+                    </li>
+                 </a>
+                 <a href="Tela_Cadastrar_Usuario.html">
+                    <li class="footer-item">
+                        <i class="bi bi-emoji-smile"></i>
+                        <p class="footer-nome-item">Cadastro Usuario</p>
+                    </li>
+                </a>
+                <a href="Tela_Cadatrar_Produto.html">
+                    <li class="footer-item">
+                        <i class="bi bi-upc-scan"></i>
+
+                        <p class="footer-nome-item">Cadastro de Produto</p></a>
+                    </li>
+                </a>
+                <a href="Tela_Carrinho.html">
+                    <li class="footer-item">
+                        <i class="bi bi-cart"></i>
+                        <p class="footer-nome-item">Carrinho</p>
+                    </li>
+                </a>
+                <a href="Tela_Produto.html">
+                    <li class="footer-item">
+                        <i class="bi bi-stickies"></i>
+                        <p class="footer-nome-item">Produto</p>
+                    </li>
+                </a>
+            </ul>
+        </footer>
+
+    </main>
+
+    <script src="./js/script-home.js"></script>
+
+</body>
+</html>
